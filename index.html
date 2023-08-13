@@ -75,17 +75,15 @@
 
     <script>
         function calcularNotas() {
-            var nota1 = parseFloat(document.getElementById("nota1").value);
-            var nota2 = parseFloat(document.getElementById("nota2").value);
-            var nota3 = parseFloat(document.getElementById("nota3").value);
-            var nota4 = parseFloat(document.getElementById("nota4").value);
-            var nota5 = parseFloat(document.getElementById("nota5").value);
+            var notaP1 = parseFloat(document.getElementById("nota1").value);
+            var notaP2 = parseFloat(document.getElementById("nota2").value);
+            var notaP3 = parseFloat(document.getElementById("nota3").value);
+            var notaP4 = parseFloat(document.getElementById("nota4").value);
+            var examenParcial = parseFloat(document.getElementById("nota5").value);
 
-            var notaHastaElMomento = ((nota1 + nota2 + nota3 + nota4 * 3) / 10).toFixed(2);
-            var notaFinalMayorA = ((105 - (nota1 + nota2 + nota3 + nota4 * 3)) / 3).toFixed(2);
+            var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4) + examenParcial * 3 / 10).toFixed(2);
 
-            var resultado = "Nota hasta el momento: " + notaHastaElMomento + "<br>" +
-                            "Tu nota final debe ser mayor a: " + notaFinalMayorA;
+            var resultado = "Nota hasta el momento: " + notaHastaElMomento;
 
             document.getElementById("resultado").innerHTML = resultado;
         }
