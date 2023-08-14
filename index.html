@@ -9,7 +9,7 @@
         }
         
         .calculator {
-            width: 275px;
+            width: 300px;
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ccc;
@@ -71,6 +71,7 @@
         </div>
         <button onclick="calcularNotas()">Calcular Notas</button>
         <p id="resultado"></p>
+        <p id="notaFinalMayorA"></p>
     </div>
 
     <script>
@@ -81,11 +82,14 @@
             var notaP4 = parseFloat(document.getElementById("nota4").value);
             var examenParcial = parseFloat(document.getElementById("nota5").value);
 
-            var notaHastaElMomento = (((notaP1 + notaP2 + notaP3 + notaP4) + examenParcial * 3)/ 10).toFixed(2);
+            var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3) / 10).toFixed(2);
+            var notaFinalMayorA = (((105 - (notaP1 + notaP2 + notaP3 + notaP4) + examenParcial * 3) / 3).toFixed(2);
 
             var resultado = "Nota hasta el momento: " + notaHastaElMomento;
+            var notaFinalMayorAResultado = "Nota final debe ser mayor a: " + notaFinalMayorA;
 
             document.getElementById("resultado").innerHTML = resultado;
+            document.getElementById("notaFinalMayorA").innerHTML = notaFinalMayorAResultado;
         }
     </script>
 </body>
