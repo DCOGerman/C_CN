@@ -81,15 +81,15 @@
             var notaP3 = parseFloat(document.getElementById("nota3").value);
             var notaP4 = parseFloat(document.getElementById("nota4").value);
             var examenParcial = parseFloat(document.getElementById("nota5").value);
-            
-            var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3)) / 3).toFixed(2);
+
             var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3) / 10).toFixed(2);
+            var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3)) / 3).toFixed(2);
 
-            var notaFinalMayorAResultado = "Nota final debe ser mayor a: " + notaFinalMayorA;
             var resultado = "Nota hasta el momento: " + notaHastaElMomento;
+            var notaFinalMayorAResultado = "Nota final debe ser mayor a: " + notaFinalMayorA;
 
-            document.getElementById("notaFinalMayorA").innerHTML = notaFinalMayorAResultado;
             document.getElementById("resultado").innerHTML = resultado;
+            document.getElementById("notaFinalMayorA").innerHTML = notaFinalMayorAResultado;
         }
     </script>
 </body>
