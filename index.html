@@ -9,7 +9,7 @@
         }
         
         .calculator {
-            width: 275px;
+            width: 300px;
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ccc;
@@ -87,15 +87,15 @@
             var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3)) / 3).toFixed(2);
 
             var resultadoElement = document.getElementById("resultado");
-            var mensajeNotaHastaElMomentoElement = document.getElementById("mensajeNotaHastaElMomento");
             var notaFinalMayorAElement = document.getElementById("notaFinalMayorA");
+            var mensajeNotaHastaElMomentoElement = document.getElementById("mensajeNotaHastaElMomento");
 
             var resultado = "Nota hasta el momento: <strong style='color: " + getColorForNota(notaHastaElMomento) + ";'>" + notaHastaElMomento + "</strong>";
 
             resultadoElement.innerHTML = resultado;
 
             if (parseFloat(notaHastaElMomento) > 10.5) {
-                mensajeNotaHastaElMomentoElement.innerHTML = "<strong style='color: green;'>Sin necesidad de dar el Examen Final Ud ya aprobó la asignatura !!CONGRATULATION!!</strong>";
+                mensajeNotaHastaElMomentoElement.innerHTML = "<strong style='color: green;'>Ud ya aprobó la asignatura !!CONGRATULATION!!</strong>";
             } else {
                 mensajeNotaHastaElMomentoElement.innerHTML = "";
             }
