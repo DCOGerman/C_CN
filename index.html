@@ -71,8 +71,8 @@
         </div>
         <button onclick="calcularNotas()">Calcular Notas</button>
         <p id="resultado"></p>
-        <p id="mensajeNotaHastaElMomento"></p>
         <p id="notaFinalMayorA"></p>
+        <p id="mensajeNotaHastaElMomento"></p>
     </div>
 
     <script>
@@ -87,8 +87,8 @@
             var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3)) / 3).toFixed(2);
 
             var resultadoElement = document.getElementById("resultado");
-            var notaFinalMayorAElement = document.getElementById("notaFinalMayorA");
             var mensajeNotaHastaElMomentoElement = document.getElementById("mensajeNotaHastaElMomento");
+            var notaFinalMayorAElement = document.getElementById("notaFinalMayorA");
 
             var resultado = "Nota hasta el momento: <strong style='color: " + getColorForNota(notaHastaElMomento) + ";'>" + notaHastaElMomento + "</strong>";
 
