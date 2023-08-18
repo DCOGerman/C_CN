@@ -51,23 +51,23 @@
         <h2>Calculadora de Notas</h2>
         <div class="input-container">
             <label for="nota1">Nota P1:</label>
-            <input type="number" id="nota1" min="0" max="100" value="12">
+            <input type="number" id="nota1" min="0" max="100">
         </div>
         <div class="input-container">
             <label for="nota2">Nota P2:</label>
-            <input type="number" id="nota2" min="0" max="100" value="12">
+            <input type="number" id="nota2" min="0" max="100">
         </div>
         <div class="input-container">
             <label for="nota3">Nota P3:</label>
-            <input type="number" id="nota3" min="0" max="100" value="12">
+            <input type="number" id="nota3" min="0" max="100">
         </div>
         <div class="input-container">
             <label for="nota4">Nota P4:</label>
-            <input type="number" id="nota4" min="0" max="100" value="12">
+            <input type="number" id="nota4" min="0" max="100">
         </div>
         <div class="input-container">
             <label for="nota5">Examen Parcial:</label>
-            <input type="number" id="nota5" min="0" max="100" value="12">
+            <input type="number" id="nota5" min="0" max="100">
         </div>
         <button onclick="calcularNotas()">Calcular Notas</button>
         <p id="resultado"></p>
@@ -82,11 +82,12 @@
             var notaP4 = parseFloat(document.getElementById("nota4").value);
             var examenParcial = parseFloat(document.getElementById("nota5").value);
 
-            var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4) / 4).toFixed(2);
-            var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4)) / 3).toFixed(2);
+            var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4) + examenParcial * 3) / 3).toFixed(2);
+            var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3) / 10).toFixed(2);
 
-            var resultado = "Nota hasta el momento: " + notaHastaElMomento;
             var notaFinalMayorAResultado = "Nota final debe ser mayor a: " + notaFinalMayorA;
+            var resultado = "Nota hasta el momento: " + notaHastaElMomento;
+
 
             document.getElementById("resultado").innerHTML = resultado;
             document.getElementById("notaFinalMayorA").innerHTML = notaFinalMayorAResultado;
