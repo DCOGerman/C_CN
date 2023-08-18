@@ -95,7 +95,7 @@
             resultadoElement.innerHTML = resultado;
 
             if (parseFloat(notaHastaElMomento) > 10.5) {
-                mensajeNotaHastaElMomentoElement.innerHTML = "<strong style='color: green;'>¡Sin necesidad de dar el Examen Final Ud ya aprobó la asignatura… !!CONGRATULATION…!!</strong>";
+                mensajeNotaHastaElMomentoElement.innerHTML = "<strong style='color: green;'>Sin necesidad de dar el Examen Final Ud ya aprobó la asignatura !!CONGRATULATION!!</strong>";
             } else {
                 mensajeNotaHastaElMomentoElement.innerHTML = "";
             }
@@ -119,9 +119,9 @@
         function getColorForNotaFinal(notaFinal) {
             var notaFinalValue = parseFloat(notaFinal);
             if (notaFinalValue <= -11.67) {
-                return "red";
-            } else if (notaFinalValue >= 35) {
                 return "green";
+            } else if (notaFinalValue >= 35) {
+                return "red";
             } else {
                 var greenValue = Math.round((notaFinalValue + 11.67) * (255 / (35 + 11.67)));
                 return "rgb(" + greenValue + ", 255, 0)";
