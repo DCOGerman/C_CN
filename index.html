@@ -9,7 +9,7 @@
         }
         
         .calculator {
-            width: 300px;
+            width: 275px;
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ccc;
@@ -71,6 +71,7 @@
         </div>
         <button onclick="calcularNotas()">Calcular Notas</button>
         <p id="resultado"></p>
+        <p id="mensajeNotaHastaElMomento"></p>
         <p id="notaFinalMayorA"></p>
     </div>
 
@@ -85,11 +86,46 @@
             var notaHastaElMomento = ((notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3) / 10).toFixed(2);
             var notaFinalMayorA = ((105 - (notaP1 + notaP2 + notaP3 + notaP4 + examenParcial * 3)) / 3).toFixed(2);
 
-            var resultado = "Nota hasta el momento: " + notaHastaElMomento;
-            var notaFinalMayorAResultado = "Nota final debe ser mayor a: " + notaFinalMayorA;
+            var resultadoElement = document.getElementById("resultado");
+            var mensajeNotaHastaElMomentoElement = document.getElementById("mensajeNotaHastaElMomento");
+            var notaFinalMayorAElement = document.getElementById("notaFinalMayorA");
 
-            document.getElementById("resultado").innerHTML = resultado;
-            document.getElementById("notaFinalMayorA").innerHTML = notaFinalMayorAResultado;
+            var resultado = "Nota hasta el momento: <strong style='color: " + getColorForNota(notaHastaElMomento) + ";'>" + notaHastaElMomento + "</strong>";
+
+            resultadoElement.innerHTML = resultado;
+
+            if (parseFloat(notaHastaElMomento) > 10.5) {
+                mensajeNotaHastaElMomentoElement.innerHTML = "<strong style='color: green;'>¡Sin necesidad de dar el Examen Final Ud ya aprobó la asignatura… !!CONGRATULATION…!!</strong>";
+            } else {
+                mensajeNotaHastaElMomentoElement.innerHTML = "";
+            }
+
+            var notaFinalMayorAResultado = "Nota final debe ser mayor a: <strong style='color: " + getColorForNotaFinal(notaFinalMayorA) + ";'>" + notaFinalMayorA + "</strong>";
+            notaFinalMayorAElement.innerHTML = notaFinalMayorAResultado;
+        }
+
+        function getColorForNota(nota) {
+            var notaValue = parseFloat(nota);
+            if (notaValue <= 7) {
+                return "red";
+            } else if (notaValue >= 14) {
+                return "green";
+            } else {
+                var greenValue = Math.round((notaValue - 7) * (255 / 7));
+                return "rgb(255, " + greenValue + ", 0)";
+            }
+        }
+
+        function getColorForNotaFinal(notaFinal) {
+            var notaFinalValue = parseFloat(notaFinal);
+            if (notaFinalValue <= -11.67) {
+                return "red";
+            } else if (notaFinalValue >= 35) {
+                return "green";
+            } else {
+                var greenValue = Math.round((notaFinalValue + 11.67) * (255 / (35 + 11.67)));
+                return "rgb(" + greenValue + ", 255, 0)";
+            }
         }
     </script>
 </body>
