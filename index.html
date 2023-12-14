@@ -78,6 +78,11 @@
     <!-- Nueva línea agregada fuera de la calculadora -->
     <p>No olvidar decir de nada :D</p>
 
+    <!-- Botones de redes sociales -->
+    <button class="social-button facebook-button" onclick="irAFacebook()">Facebook</button>
+    <button class="social-button instagram-button" onclick="irAInstagram()">Instagram</button>
+
+
 
     <script>
         function calcularNotas() {
@@ -130,6 +135,17 @@
                 var greenValue = Math.round((notaFinalValue + 11.67) * (255 / (35 + 11.67)));
                 return "rgb(" + greenValue + ", 255, 0)";
             }
+        }
+
+        // Funciones para redirigir a redes sociales
+        function irAFacebook() {
+            // Reemplaza con tu URL de Facebook
+            window.location.href = 'https://www.http://facebook.com/DCOGERMAN';
+        }
+
+        function irAInstagram() {
+            // Reemplaza con tu URL de Instagram
+            window.location.href = 'https://www.instagram.com/tuusuario';
         }
     </script>
 </body>
